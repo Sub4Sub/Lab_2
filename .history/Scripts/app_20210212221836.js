@@ -315,14 +315,6 @@ mainContent.append(newDivTag);
                 <li class="nav-item">
                   <a class="nav-link" aria-current="page" href="contact.html"><i class="fas fa-phone fa-lg"></i> Contact Us</a>
                 </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="login.html"><i class="fas fa-user fa-lg"></i> Login</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="register.html"><i class="fas fa-user fa-lg"></i> Register</a>
-                </li>
               </ul>
             </div>
           </div>
