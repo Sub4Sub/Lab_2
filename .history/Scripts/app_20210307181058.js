@@ -499,7 +499,7 @@ mainContent.append(newDivTag);
         let newListItem = 
         `
         <div style=text-align: center;">
-        <span class="navbar-text" style="margin: 100px 100px 0 0; padding: 50px 50px;">` + userName + `</span>
+        <span class="navbar-text" style="margin: 100px 100px 0 0;">` + userName + `</span>
         </div>
         `
 

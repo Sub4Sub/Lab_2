@@ -494,12 +494,12 @@ mainContent.append(newDivTag);
         $("#contactName").val("");
         $("#password").val("");
 
-        let headerList = $("#headerList");
+        let headerList = $("#navbarSupportedContent");
 
         let newListItem = 
         `
-        <div style=text-align: center;">
-        <span class="navbar-text" style="margin: 100px 100px 0 0; padding: 50px 50px;">` + userName + `</span>
+        <div style=margin-right: 10%;">
+        <span class="navbar-text">` + userName + `</span>
         </div>
         `
 

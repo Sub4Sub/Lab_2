@@ -345,6 +345,10 @@ mainContent.append(newDivTag);
                 </li>
                 </ul>
 
+                <div style=margin-right: 50%;">
+        <span class="navbar-text" style="float:right"> Hiii </span>
+        </div>
+
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" id ="loginHeaderList">
                 <li class="nav-item">
                   <a class="nav-link" aria-current="page" href="login.html"><i class="fas fa-user fa-lg"></i> Login</a>
@@ -498,8 +502,8 @@ mainContent.append(newDivTag);
 
         let newListItem = 
         `
-        <div style=text-align: center;">
-        <span class="navbar-text" style="margin: 100px 100px 0 0; padding: 50px 50px;">` + userName + `</span>
+        <div style=margin-right: 10%;">
+        <span class="navbar-text">` + userName + `</span>
         </div>
         `
 
