@@ -637,7 +637,7 @@ mainContent.append(newDivTag);
 
       <div class="row" style="margin-top: 5%;">
       <div class="offset-md-3 col-md-6 col-sm-12">
-      <div class="row justify-content-lg-center g-3" style="background-color: lightgrey; padding-bottom: 50px;">
+      <div class="row justify-content-lg-center g-3" style="background-color: lightgrey; padding: 5px;">
       <h1 class="display-4"><strong>Register</strong></h1>
         <form >
           <p class="hint-text">Create your own account. It's free and only takes a minute.</p>
@@ -683,15 +683,11 @@ mainContent.append(newDivTag);
         
       </div>
           
-          <div class="text-right" style=" padding: 5px; position: absolute; right: 30%;">
+          <div class="text-right">
           <button id="sendButton" type="submit" class="btn btn-primary"><i class="fas fa-envelope fa-lg"></i> Register</button>
           </div>
           </form>
       </div>
-      <p class="text-center text-muted small">
-                  Already have an account? 
-                  <a href="login.html">Sign in</a>
-                </p>
       </div>
       </div>`;
 

@@ -688,10 +688,6 @@ mainContent.append(newDivTag);
           </div>
           </form>
       </div>
-      <p class="text-center text-muted small">
-                  Already have an account? 
-                  <a href="login.html">Sign in</a>
-                </p>
       </div>
       </div>`;
 
