@@ -448,12 +448,12 @@ mainContent.append(newDivTag);
 
       <div class="row" style="margin-top: 5%;">
       <div class="offset-md-3 col-md-6 col-sm-12">
-      <div class="row justify-content-lg-center g-3" style="background-color: lightgrey; padding-bottom: 50px; ">
+      <div class="row justify-content-lg-center g-3" style="background-color: lightgrey; padding-bottom: 30px;">
       <h1 class="display-4">Login</h1>
         <form>
 
           <div class="input-group mb-3">
-            <span class="input-group-addon" id="inputGroup-sizing-default" style="padding: 5px; border-style: groove; width: 6%; ">
+            <span class="input-group-addon" id="inputGroup-sizing-default" style="padding: 5px; border-style: groove; width: 5%; ">
             <i class="fa fa-user" style="align-content: center;">
             </i>
             </span>
@@ -464,7 +464,7 @@ mainContent.append(newDivTag);
          
           
           <div class="input-group">
-                          <span class="input-group-addon" style="padding: 5px; border-style: groove; width: 6%;">
+                          <span class="input-group-addon" style="padding: 5px; border-style: groove; width: 7%;">
                             <i class="fa fa-lock" style="padding: 5px;">
                             </i>
                           </span>
@@ -472,7 +472,7 @@ mainContent.append(newDivTag);
                           value="" placeholder="Enter your password">
                         </div>
           
-          <div class="text-right" style="padding: 5px; position: absolute; right: 30%;">
+          <div class="text-right">
           <button id="sendButton" type="button" class="btn btn-primary"><i class="fas fa-envelope fa-lg"></i> Login</button>
           </div>
           </form>

@@ -448,7 +448,7 @@ mainContent.append(newDivTag);
 
       <div class="row" style="margin-top: 5%;">
       <div class="offset-md-3 col-md-6 col-sm-12">
-      <div class="row justify-content-lg-center g-3" style="background-color: lightgrey; padding-bottom: 50px; ">
+      <div class="row justify-content-lg-center g-3" style="background-color: lightgrey; padding-bottom: 30px; ">
       <h1 class="display-4">Login</h1>
         <form>
 
@@ -472,7 +472,7 @@ mainContent.append(newDivTag);
                           value="" placeholder="Enter your password">
                         </div>
           
-          <div class="text-right" style="padding: 5px; position: absolute; right: 30%;">
+          <div class="text-right" style="padding: 10px; position: absolute; right: 50%">
           <button id="sendButton" type="button" class="btn btn-primary"><i class="fas fa-envelope fa-lg"></i> Login</button>
           </div>
           </form>

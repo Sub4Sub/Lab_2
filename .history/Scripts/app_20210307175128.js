@@ -472,7 +472,7 @@ mainContent.append(newDivTag);
                           value="" placeholder="Enter your password">
                         </div>
           
-          <div class="text-right" style="padding: 5px; position: absolute; right: 30%;">
+          <div class="text-right" style="padding: 5px; position: absolute; right: 70%;">
           <button id="sendButton" type="button" class="btn btn-primary"><i class="fas fa-envelope fa-lg"></i> Login</button>
           </div>
           </form>
