@@ -552,7 +552,7 @@ mainContent.append(newDivTag);
     function testEmail()
     {
       let messageArea = $("#ErrorMessage").hide();
-      let emailPattern = /^(?=.*[@])[A-Za-z\d@.]{8,}$/;
+      let emailPattern = /[\S+@\S+]{8,}/;
 
         
         $("#emailAddress").on("blur", function()
