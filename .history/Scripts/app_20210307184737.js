@@ -582,13 +582,11 @@ mainContent.append(newDivTag);
           {
             //Select and highlight the input box
             $(this).trigger("focus").trigger("select");
-            //Display error message
             messageArea.show().addClass("alert alert-danger").text("Please enter a valid email address. This must include one @ symbol and be at least 8 characters long.");
           }
           else
           {
-            //Hide error message
-            messageArea.removeAttr("class").hide();
+              messageArea.removeAttr("class").hide();
           }
         });
     }
@@ -604,73 +602,52 @@ mainContent.append(newDivTag);
       //Setting regex pattern
       let passwordPattern = /[\S+]{6,}/;
 
-      //When the user takes focus from the password input box do:
       $("#password").on("blur", function()
       {
-        //If confirm password text val is not blank:
         if($("#confirmPassword").val() != "")
         {
-          //If email does not match regex pattern do:
           if(!passwordPattern.test($("#password").val()))
           {
             //Select and highlight the input box
             $("#password").trigger("focus").trigger("select");
-            //Display error message
             messageArea.show().addClass("alert alert-danger").text("Please enter a valid password. This must include be at least 6 characters long.");
-            //Set confirm error text value to blank
             $("#confirmPassword").val("");
           }
           else
           {
-            //If password text val does not match the confirm password text val do:
               if($("#password").val() != $("#confirmPassword").val())
               {
                 //Select and highlight the input box
                 $("#password").trigger("focus").trigger("select");
-                //Display error message
                 messageArea.show().addClass("alert alert-danger").text("Passwords did not match.");
-                //Set confirm error text value to blank
-                $("#confirmPassword").val("");              
-              }
+                $("#confirmPassword").val("");              }
               else
               {
-                //Hide error message
                 messageArea.removeAttr("class").hide();
               }
           }
         }
       });
 
-        //When the user takes focus from the confirm password input box do:
         $("#confirmPassword").on("blur", function()
         {
-          //If password text val is not blank:
           if($("#password").val() != "")
           {
-            //If email does not match regex pattern do:
             if(!passwordPattern.test($("#password").val()))
             {
-              //Select and highlight the input box
               $("#password").trigger("focus").trigger("select");
-              //Display error message
               messageArea.show().addClass("alert alert-danger").text("Please enter a valid password. This must include be at least 6 characters long.");
-              //Set confirm error text value to blank
               $("#confirmPassword").val("");
             }
             else
             {
                 if($("#password").val() != $("#confirmPassword").val())
                 {
-                  //Select and highlight the input box
                   $("#password").trigger("focus").trigger("select");
-                  //Display error message
                   messageArea.show().addClass("alert alert-danger").text("Passwords did not match.");
-                  //Set confirm error text value to blank
-                  $("#confirmPassword").val("");                
-                }
+                  $("#confirmPassword").val("");                }
                 else
                 {
-                  //Hide error message
                   messageArea.removeAttr("class").hide();
                 }
             }
@@ -683,10 +660,8 @@ mainContent.append(newDivTag);
     */
     function displayRegister()
     {
-      //Setting an errorMessage div tag
       let errorHTML = `<div id="ErrorMessage"></div>`;
 
-      //Appending the errorMessage div the the main using jQuery
       $("main").append(errorHTML);
       
       //Creating a div element that contains the pages content
@@ -756,38 +731,19 @@ mainContent.append(newDivTag);
       //Appending the div to the end of main
       $("main").append(mainHTML);
 
-      // calling the form validation function
+      // form validation
       registerFormValidation();
 
-      //Creating a click event for the send button
       $("#sendButton").on("click", function(event) 
       {
-          //Preventing default form behaviour
           event.preventDefault();
 
-          //Selecting and hiding the error message box
-          let messageArea = $("#ErrorMessage").hide();
+          let userName = "user_" + $("#firstName").val() + $("#lastName").val();
 
-          //Setting the usernames value to user_firstName_LastName
-          let userName = "user_" + $("#firstName").val() + "_" + $("#lastName").val();
-
-          if($("#firstName").val() != "" && $("#lastName").val() != "" && $("#emailAddress").val() != "" && $("#password").val() != "" && $("#confirmPassword").val() != "")
-          {
-          //Creating a user object based on the inputted values
           let user = new User($("#firstName").val(), $("#lastName").val(), userName, $("#emailAddress").val(), $("#password").val());
-          
-          //Hide error message
-          messageArea.removeAttr("class").hide();
 
-          //displaying the user in the console using the toString function
           console.log(user.toString());
-          }
-          else
-          {
-            //Display error message
-            messageArea.show().addClass("alert alert-danger").text("Please enter a value into every text box.");
-              
-          }
+        
       });
     }
 

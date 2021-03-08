@@ -765,9 +765,6 @@ mainContent.append(newDivTag);
           //Preventing default form behaviour
           event.preventDefault();
 
-          //Selecting and hiding the error message box
-          let messageArea = $("#ErrorMessage").hide();
-
           //Setting the usernames value to user_firstName_LastName
           let userName = "user_" + $("#firstName").val() + "_" + $("#lastName").val();
 
@@ -781,12 +778,6 @@ mainContent.append(newDivTag);
 
           //displaying the user in the console using the toString function
           console.log(user.toString());
-          }
-          else
-          {
-            //Display error message
-            messageArea.show().addClass("alert alert-danger").text("Please enter a value into every text box.");
-              
           }
       });
     }

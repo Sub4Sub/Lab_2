@@ -8,7 +8,7 @@
 
 var User = /** @class */ (function () {
   
-  //User parameterized constructor
+  //constructor
   function User(firstName, lastName, userName, emailAddress, password) {
     this.m_firstName = firstName;
     this.m_lastName = lastName;
@@ -17,7 +17,6 @@ var User = /** @class */ (function () {
     this.m_password = password;
   }
 
-  //User toString function
   User.prototype.toString = function()
   {
     return "Full Name: " + this.m_firstName + " " + this.m_lastName +
@@ -283,6 +282,15 @@ mainContent.append(newDivTag);
       mainContent.append(newDivTag);
 
       //Selecting the send button
+     /* let sendButton = document.getElementById("sendButton");
+
+        //Creating an event for when the send button is clicked
+        sendButton.addEventListener("click", function(event){
+            
+          window.location.href = './index.html'; //Redirect user to index
+
+        });*/
+
         $("#sendButton").on("click", function() 
     {
       
@@ -432,7 +440,7 @@ mainContent.append(newDivTag);
    function displayLogin()
     {
 
-      // a div element that contains the pages main content
+      // a div element that contains the pages content
       let mainHTML = 
       `<div id="messageArea"></div>
 
@@ -477,20 +485,15 @@ mainContent.append(newDivTag);
       //Appending the div to the end of main
       $("main").append(mainHTML);
 
-      //Using jQuery to create a click event for the send button
       $("#sendButton").on("click", function() 
       {
-        //Selecting the contact name input box's text values
         let userName = $("#contactName").val();
 
-        //Resetting the input box's text values to blank 
         $("#contactName").val("");
         $("#password").val("");
 
-        //Selecting the header list
         let headerList = $("#headerList");
 
-        //Creating a new div that will display the userName in the nav bar
         let newListItem = 
         `
         <div style=text-align: center;">
@@ -498,7 +501,6 @@ mainContent.append(newDivTag);
         </div>
         `
 
-        //Appending the div item in between the contact us button and the login button
         headerList.after(newListItem);
         
       });
@@ -510,9 +512,9 @@ mainContent.append(newDivTag);
     */
     function registerFormValidation()
     {
-      testFullName(); //Validate first and last name function
-      testEmail(); //validate email function
-      testPassword(); //Validate password function
+      testFullName();
+      testEmail();
+      testPassword();
     }
 
     /*
@@ -520,45 +522,33 @@ mainContent.append(newDivTag);
     */
     function testFullName()
     {
-      //Selecting and hiding the error message box
       let messageArea = $("#ErrorMessage").hide();
-
-      //Setting regex pattern
       let fullNamePattern = /([A-Z][a-z]{1,})/;
 
-        //When the user takes focus from the first name input box do:
+        
         $("#firstName").on("blur", function()
         {
-          //If first name does not match regex pattern do:
           if(!fullNamePattern.test($(this).val()))
           {
-            //Select and highlight the input box
             $(this).trigger("focus").trigger("select");
-            //Display error message
             messageArea.show().addClass("alert alert-danger").text("Please enter a valid first Name. First name must be capitalized and at least 2 characters long.");
           }
           else
           {
-            //Hide error message
-            messageArea.removeAttr("class").hide();
+              messageArea.removeAttr("class").hide();
           }
         });
 
-        //When the user takes focus from the last name input box do:
         $("#lastName").on("blur", function()
         {
-          //If last name does not match regex pattern do:
           if(!fullNamePattern.test($(this).val()))
           {
-            //Select and highlight the input box
             $(this).trigger("focus").trigger("select");
-            //Display error message
             messageArea.show().addClass("alert alert-danger").text("Please enter a valid last Name. Last name must be capitalized and at least 2 characters long.");
           }
           else
           {
-            //Hide error message
-            messageArea.removeAttr("class").hide();
+              messageArea.removeAttr("class").hide();
           }
         });
     }
@@ -568,27 +558,20 @@ mainContent.append(newDivTag);
     */
     function testEmail()
     {
-      //Selecting and hiding the error message box
       let messageArea = $("#ErrorMessage").hide();
-
-      //Setting regex pattern
       let emailPattern = /^(?=.*[@])[A-Za-z\d@.]{8,}$/;
 
-        //When the user takes focus from the email input box do:
+        
         $("#emailAddress").on("blur", function()
         {
-          //If email does not match regex pattern do:
           if(!emailPattern.test($(this).val()))
           {
-            //Select and highlight the input box
             $(this).trigger("focus").trigger("select");
-            //Display error message
             messageArea.show().addClass("alert alert-danger").text("Please enter a valid email address. This must include one @ symbol and be at least 8 characters long.");
           }
           else
           {
-            //Hide error message
-            messageArea.removeAttr("class").hide();
+              messageArea.removeAttr("class").hide();
           }
         });
     }
@@ -598,79 +581,53 @@ mainContent.append(newDivTag);
     */
     function testPassword()
     {
-      //Selecting and hiding the error message box
       let messageArea = $("#ErrorMessage").hide();
-
-      //Setting regex pattern
       let passwordPattern = /[\S+]{6,}/;
 
-      //When the user takes focus from the password input box do:
       $("#password").on("blur", function()
       {
-        //If confirm password text val is not blank:
         if($("#confirmPassword").val() != "")
         {
-          //If email does not match regex pattern do:
           if(!passwordPattern.test($("#password").val()))
           {
-            //Select and highlight the input box
             $("#password").trigger("focus").trigger("select");
-            //Display error message
             messageArea.show().addClass("alert alert-danger").text("Please enter a valid password. This must include be at least 6 characters long.");
-            //Set confirm error text value to blank
             $("#confirmPassword").val("");
           }
           else
           {
-            //If password text val does not match the confirm password text val do:
               if($("#password").val() != $("#confirmPassword").val())
               {
-                //Select and highlight the input box
                 $("#password").trigger("focus").trigger("select");
-                //Display error message
                 messageArea.show().addClass("alert alert-danger").text("Passwords did not match.");
-                //Set confirm error text value to blank
-                $("#confirmPassword").val("");              
-              }
+                $("#confirmPassword").val("");              }
               else
               {
-                //Hide error message
                 messageArea.removeAttr("class").hide();
               }
           }
         }
       });
 
-        //When the user takes focus from the confirm password input box do:
         $("#confirmPassword").on("blur", function()
         {
-          //If password text val is not blank:
           if($("#password").val() != "")
           {
-            //If email does not match regex pattern do:
             if(!passwordPattern.test($("#password").val()))
             {
-              //Select and highlight the input box
               $("#password").trigger("focus").trigger("select");
-              //Display error message
               messageArea.show().addClass("alert alert-danger").text("Please enter a valid password. This must include be at least 6 characters long.");
-              //Set confirm error text value to blank
               $("#confirmPassword").val("");
             }
             else
             {
                 if($("#password").val() != $("#confirmPassword").val())
                 {
-                  //Select and highlight the input box
                   $("#password").trigger("focus").trigger("select");
-                  //Display error message
                   messageArea.show().addClass("alert alert-danger").text("Passwords did not match.");
-                  //Set confirm error text value to blank
-                  $("#confirmPassword").val("");                
-                }
+                  $("#confirmPassword").val("");                }
                 else
                 {
-                  //Hide error message
                   messageArea.removeAttr("class").hide();
                 }
             }
@@ -683,10 +640,8 @@ mainContent.append(newDivTag);
     */
     function displayRegister()
     {
-      //Setting an errorMessage div tag
       let errorHTML = `<div id="ErrorMessage"></div>`;
 
-      //Appending the errorMessage div the the main using jQuery
       $("main").append(errorHTML);
       
       //Creating a div element that contains the pages content
@@ -756,38 +711,19 @@ mainContent.append(newDivTag);
       //Appending the div to the end of main
       $("main").append(mainHTML);
 
-      // calling the form validation function
+      // form validation
       registerFormValidation();
 
-      //Creating a click event for the send button
       $("#sendButton").on("click", function(event) 
       {
-          //Preventing default form behaviour
           event.preventDefault();
 
-          //Selecting and hiding the error message box
-          let messageArea = $("#ErrorMessage").hide();
+          let userName = "user_" + $("#firstName").val() + $("#lastName").val();
 
-          //Setting the usernames value to user_firstName_LastName
-          let userName = "user_" + $("#firstName").val() + "_" + $("#lastName").val();
-
-          if($("#firstName").val() != "" && $("#lastName").val() != "" && $("#emailAddress").val() != "" && $("#password").val() != "" && $("#confirmPassword").val() != "")
-          {
-          //Creating a user object based on the inputted values
           let user = new User($("#firstName").val(), $("#lastName").val(), userName, $("#emailAddress").val(), $("#password").val());
-          
-          //Hide error message
-          messageArea.removeAttr("class").hide();
 
-          //displaying the user in the console using the toString function
           console.log(user.toString());
-          }
-          else
-          {
-            //Display error message
-            messageArea.show().addClass("alert alert-danger").text("Please enter a value into every text box.");
-              
-          }
+        
       });
     }
 
